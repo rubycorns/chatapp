@@ -13,7 +13,8 @@ post '/' do
 end
 
 def render_posts
-  Pathname.new('posts.txt').read.lines.map do |line|
+  chat_messages = Pathname.new('posts.txt').read.lines.map do |line|
     '<p>' + line + '</p>'
-  end.join
+  end
+  chat_messages.join
 end
